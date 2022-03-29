@@ -21,7 +21,7 @@ module "iam_user" {
   source  = "terraform-aws-modules/iam/aws//modules/iam-user"
   version = "~> 4"
 
-  name          = "vasya.pupkin"
+  name          = "vasya.pupkin1"
   force_destroy = true
 
   #pgp_key = "keybase:test"

@@ -61,6 +61,14 @@ pipeline {
                 sh "terraform apply -input=false tfplan"
             }
         }
+        stage('Destroy') {
+            when {
+                equals expected: true, actual: params.destroy
+            }
+        
+        steps {
+           sh "terraform destroy --auto-approve"
+        }
         stage("Check the git version"){
             steps{
                 sh 'git --version'                                                

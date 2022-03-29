@@ -25,6 +25,7 @@ pipeline {
                 echo "You can also use \${BUILD_NUMBER} -> ${BUILD_NUMBER}" 
                 sh 'terraform --version'
                 sh 'terraform init'
+                sh 'terraform plan'
             }
         }
         stage("Check the git version"){

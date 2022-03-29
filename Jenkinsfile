@@ -1,6 +1,9 @@
 pipeline {
     agent any
-    
+    parameters {
+        booleanParam(name: 'destroy', defaultValue: false, description: 'Destroy Terraform build?')
+
+    }
     
      environment {
         AWS_ACCESS_KEY_ID     = credentials('AWS_ACCESS_KEY_ID')

@@ -19,5 +19,10 @@ pipeline {
                 echo "You can also use \${BUILD_NUMBER} -> ${BUILD_NUMBER}"                                                
             }
         }
+        stage("Check the git version"){
+            steps{
+                sh 'git --version'                                                
+            }
+        }
     }
 }

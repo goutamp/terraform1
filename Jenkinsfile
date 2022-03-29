@@ -68,7 +68,8 @@ pipeline {
         
         steps {
            sh "terraform destroy --auto-approve"
-        }
+         }
+        }    
         stage("Check the git version"){
             steps{
                 sh 'git --version'                                                

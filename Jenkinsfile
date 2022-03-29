@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
-        booleanParam(name: 'destroy', defaultValue: false, description: 'Destroy Terraform build?')
+        booleanParam(name: 'destroy', defaultValue: true, description: 'Destroy Terraform build?')
 
     }
     

@@ -30,6 +30,12 @@ pipeline {
                
                 sh "terraform plan -input=false -out tfplan "
                 sh 'terraform show -no-color tfplan > tfplan.txt'
+                withCredentials([azureServicePrincipal(credentialsId: "az-test-principal",
+                                                subscriptionIdVariable: 'ARM_SUBSCRIPTION_ID',
+                                                clientIdVariable: 'ARM_CLIENT_ID',
+                                                clientSecretVariable: 'ARM_CLIENT_SECRET',
+                                                tenantIdVariable: 'ARM_TENANT_ID')]) 
+                sh '${subscriptionIdVariable}
             }
         }
         stage('Approval') {
